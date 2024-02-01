@@ -44,3 +44,4 @@ bin/
 
 /worker.env
 .env
+*log
