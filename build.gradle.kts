@@ -34,11 +34,12 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind:2.16.1")
     implementation("com.fasterxml.jackson.core:jackson-annotations:2.16.1")
     implementation("com.jcabi:jcabi-log:0.24.1")
+    implementation("io.github.cdimascio:dotenv-java:3.0.0")
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
-tasks.test {
+tasks.withType<Test> {
     useJUnitPlatform()
 }
 
@@ -59,6 +60,10 @@ tasks.withType<Jar>{
         .map(::zipTree) // OR .map { zipTree(it) }
     from(dependencies)
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    exec {
+    commandLine("sh","./config.sh")
+        }
+    
     
 }
 

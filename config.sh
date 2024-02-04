@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/bash
 export SPRING_DATASOURCE_URL="jdbc:mysql://localhost:3306/elyte?user=userExample&password=54321"
 export JDBC_DRIVER="com.mysql.cj.jdbc.Driver"
 export RABBIT_HOST="localhost"

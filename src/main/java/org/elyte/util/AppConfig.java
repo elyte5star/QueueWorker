@@ -19,7 +19,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.Map;
 import java.util.Properties;
 import java.util.UUID;
-
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Setter
 @Getter
@@ -36,7 +37,7 @@ public class AppConfig {
 
     private Properties properties;
 
-    public  ObjectMapper mapper;
+    public ObjectMapper mapper;
 
     public AppConfig() {
         this.mapper = new ObjectMapper();
@@ -53,7 +54,6 @@ public class AppConfig {
         }
     }
 
-
     public String getConfigValue(String key) {
         String value = null;
         try {
@@ -67,6 +67,23 @@ public class AppConfig {
         return value;
     }
 
+    public String resolveEnvVars(String input) {
+        if (null == input) {
+            return null;
+        }
+        // match ${ENV_VAR_NAME} or $ENV_VAR_NAME
+        Pattern p = Pattern.compile("\\$\\{(\\w+)\\}|\\$(\\w+)");
+        Matcher m = p.matcher(input); // get a matcher object
+        StringBuffer sb = new StringBuffer();
+        while (m.find()) {
+            String envVarName = null == m.group(1) ? m.group(2) : m.group(1);
+            String envVarValue = System.getenv(envVarName);
+            m.appendReplacement(sb, null == envVarValue ? "" : envVarValue);
+        }
+        m.appendTail(sb);
+        log.info(sb.toString());
+        return sb.toString();
+    }
 
     public String randomString(int len) {
         StringBuilder sb = new StringBuilder(len);
@@ -92,7 +109,7 @@ public class AppConfig {
     public String convertObjectToJson(Object object) {
         String result = null;
         try {
-            result =this.mapper.writeValueAsString(object);
+            result = this.mapper.writeValueAsString(object);
         } catch (JsonProcessingException e) {
             log.error("[x] JsonProcessingException Exception ", e.getLocalizedMessage());
 
@@ -106,8 +123,6 @@ public class AppConfig {
                 });
 
     }
-
-    
 
     public long diff(String start, String end) {
         LocalDateTime dateTime1 = LocalDateTime.parse(start, dtf);
