@@ -18,7 +18,8 @@ public class CreateProductRequest implements Serializable{
     private String name;
     private String image;
     private String details;
-    //private String description;
+
+    private String description;
     private String category;
     private Double price;
     private Integer stock_quantity;

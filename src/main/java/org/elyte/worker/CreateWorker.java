@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class CreateWorker {
 
     private String wid;

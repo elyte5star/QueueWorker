@@ -23,7 +23,7 @@ public class Queue extends AppConfig {
 
         ConnectionFactory cf = new ConnectionFactory();
 
-        cf.setHost(this.getConfigValue("RABBIT_HOST"));
+        cf.setHost(this.getConfigValue("SPRING_RABBITMQ_HOST"));
         cf.setUsername(this.getConfigValue("RABBITMQ_DEFAULT_USER"));
         cf.setPassword(this.getConfigValue("RABBITMQ_DEFAULT_PASS"));
         cf.setVirtualHost("/");
