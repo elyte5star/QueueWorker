@@ -60,10 +60,6 @@ tasks.withType<Jar>{
         .map(::zipTree) // OR .map { zipTree(it) }
     from(dependencies)
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-    exec {
-    commandLine("sh","./config.sh")
-        }
-    
     
 }
 
