@@ -1,0 +1,7 @@
+craw.log
+.idea
+.git
+.gitignore
+*/build
+.vscode
+README.md

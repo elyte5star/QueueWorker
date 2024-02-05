@@ -63,7 +63,7 @@ public class AppConfig {
             InputStream resource = this.getClass().getClassLoader().getResourceAsStream("config.yml");
             Properties prop = new Properties();
             prop.load(resource);
-            value = prop.getProperty(key);
+            value = System.getenv(key) == null ? prop.getProperty(key) : System.getenv(key);
         } catch (IOException e) {
             log.error("[+] Config Exception ", e.getCause());
         }
