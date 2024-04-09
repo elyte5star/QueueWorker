@@ -5,8 +5,9 @@ import lombok.Setter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
+import org.elyte.config.AppConfig;
 import org.elyte.queue.QueueItem;
-import org.elyte.util.AppConfig;
 import org.elyte.worker.WorkResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package org.elyte.util;
+package org.elyte.config;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;

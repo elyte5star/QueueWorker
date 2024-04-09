@@ -6,9 +6,11 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import java.nio.charset.StandardCharsets;
 import com.rabbitmq.client.MessageProperties;
+
+import org.elyte.config.AppConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.elyte.util.AppConfig;
+
 import lombok.Getter;
 
 public class Queue extends AppConfig {

@@ -34,6 +34,7 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind:2.16.1")
     implementation("com.fasterxml.jackson.core:jackson-annotations:2.16.1")
     implementation("com.jcabi:jcabi-log:0.24.1")
+    implementation("org.yaml:snakeyaml:2.2")
     implementation("io.github.cdimascio:dotenv-java:3.0.0")
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")

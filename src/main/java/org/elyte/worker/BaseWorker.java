@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import org.elyte.booking.BookingHandler;
+import org.elyte.config.AppConfig;
 import org.elyte.enums.State;
 import org.elyte.enums.WorkerType;
 import org.elyte.queue.Queue;
@@ -14,7 +15,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import com.rabbitmq.client.DeliverCallback;
-import org.elyte.util.AppConfig;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
