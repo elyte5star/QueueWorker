@@ -1,5 +1,7 @@
 package org.elyte.booking;
 import java.math.BigDecimal;
+import java.util.List;
+
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -10,7 +12,7 @@ import lombok.NoArgsConstructor;
 public class BookingJob {
     private String userid;
     private BigDecimal totalPrice;
-    private Cart cart;
+    private List<ItemInCart> cart;
     private ShippingAddress shippingAddress;
     
 }

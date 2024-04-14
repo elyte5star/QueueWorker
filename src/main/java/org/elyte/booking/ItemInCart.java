@@ -10,19 +10,22 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class CreateProductRequest implements Serializable{
+public class ItemInCart implements Serializable{
 
     @Serial
     private static final long serialVersionUID = 1234567L;
-
+    
+    private String pid;
     private String name;
     private String image;
     private String details;
-
     private String description;
     private String category;
     private Double price;
-    private Integer stock_quantity;
+    private Integer stockQuantity;
+    private int quantity;
+    private Double calculatedPrice;
+    private String productDiscount=null;
 
     
 }
