@@ -13,6 +13,6 @@ public class BookingJob {
     private String userid;
     private BigDecimal totalPrice;
     private List<ItemInCart> cart;
-    private ShippingAddress shippingAddress;
+    private ShippingDetails shippingAddress;
     
 }

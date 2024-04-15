@@ -9,17 +9,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class ShippingAddress implements Serializable{
+public class ShippingDetails implements Serializable{
 
     @Serial
     private static final long serialVersionUID = 1234567L;
 
-    private String billingFullName;
+    private String fullName;
+    private String streetAddress;
+    private String country;
+    private String state;
     private String bemail;
-    private String baddress;
-    private String bcountry;
-    private String bzip;
-    private String bcity;
+    private String zip;
 
     
 }
