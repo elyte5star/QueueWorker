@@ -18,7 +18,7 @@ public class ShippingDetails implements Serializable{
     private String streetAddress;
     private String country;
     private String state;
-    private String bemail;
+    private String email;
     private String zip;
 
     
