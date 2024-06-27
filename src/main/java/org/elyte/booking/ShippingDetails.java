@@ -4,7 +4,7 @@ import java.io.Serializable;
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-
+import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,6 +20,7 @@ public class ShippingDetails implements Serializable{
     private String state;
     private String email;
     private String zip;
+    private Date shipDate;
 
     
 }
